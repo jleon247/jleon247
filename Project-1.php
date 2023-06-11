@@ -4,13 +4,13 @@
     <title>GGC Soccer Club</title>
     <style>
         body {
-            background-color: blue;
+            background-color: #15a9ed;
             color: white;
             font-family: Arial, sans-serif;
         }
 
         h1 {
-            color: green;
+            color: #07f269;
             font-weight: bold;
         }
 
