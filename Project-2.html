@@ -24,6 +24,22 @@
             padding: 8px;
             text-align: left;
         }
+
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        .pink {
+            color: pink;
+        }
     </style>
 </head>
 <body>
@@ -109,25 +125,36 @@ if (!empty($responses)) {
 
     // Display statistics
     echo '<h2>Overall Statistics</h2>';
-    echo "<p>Total Users: $totalUsers</p>";
-    echo "<p>Average Score of All Users: " . round($averageScoreAll, 2) . "/100</p>";
+    echo "<p><span class=\"red\">Total Users: $totalUsers</span></p>";
+    echo "<p><span class=\"blue\">Average Score of All Users: " . round($averageScoreAll, 2) . "/100</span></p>";
 
     echo '<h2>Gender Statistics</h2>';
-    echo "<p>Total Male Users: $maleCount</p>";
-    echo "<p>Average Score of Male Users: " . round($averageScoreMale, 2) . "/100</p>";
+    echo "<p><span class=\"orange\">Total Male Users: $maleCount</span></p>";
+    echo "<p><span class=\"orange\">Average Score of Male Users: " . round($averageScoreMale, 2) . "/100</span></p>";
 
-    echo "<p>Total Female Users: $femaleCount</p>";
-    echo "<p>Average Score of Female Users: " . round($averageScoreFemale, 2) . "/100</p>";
+    echo "<p><span class=\"pink\">Total Female Users: $femaleCount</span></p>";
+    echo "<p><span class=\"pink\">Average Score of Female Users: " . round($averageScoreFemale, 2) . "/100</span></p>";
 
     echo '<h2>Grade Level Statistics</h2>';
     echo '<table>';
-    echo '<tr><th>Grade Level</th><th>Total Users</th><th>Average Score</th></tr>';
-    for ($i = 0; $i < count($grades); $i++) {
-        echo '<tr>';
-        echo "<td>$grades[$i]</td>";
-        echo "<td>$gradeCounts[$i]</td>";
-        echo "<td>" . round($averageScores[$grades[$i]], 2) . "/100</td>";
-        echo '</tr>';
+    echo '<tr>
+            <th>Level</th>
+            <th>Number of Students</th>
+            <th>Percentage of Students</th>
+            <th>Average Score</th>
+          </tr>';
+    foreach ($grades as $grade) {
+        $gradeIndex = array_search($grade, $grades);
+        $numStudents = $gradeCounts[$gradeIndex];
+        $percentage = round(($numStudents / $totalUsers) * 100, 2);
+        $averageScore = round($averageScores[$grade], 2);
+
+        echo "<tr>";
+        echo "<td>$grade</td>";
+        echo "<td style=\"text-align: center;\">$numStudents</td>";
+        echo "<td><meter value=\"$numStudents\" max=\"$totalUsers\"></meter>$percentage%</td>";
+        echo "<td><progress value=\"$averageScore\" max=\"150\"></progress>$averageScore</td>";
+        echo "</tr>";
     }
     echo '</table>';
 
@@ -139,3 +166,4 @@ if (!empty($responses)) {
 ?>
 </body>
 </html>
+
