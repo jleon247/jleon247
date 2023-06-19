@@ -76,7 +76,7 @@
         echo '</div>';
     }
     ?>
-<a href="statistics.php">View Statistics</a>
+<a href="project-stat.php">View Statistics</a>
 
 </body>
 </html>
