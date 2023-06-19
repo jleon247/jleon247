@@ -60,6 +60,9 @@
         if ($q5 === 'a') {
             $score += 20;
         }
+       // Save user's information and answers to a text file
+    $data = "Name: $name\nEmail: $email\nGrade Level: $grade\nScore: $score\n\n";
+    file_put_contents('responses.txt', $data, FILE_APPEND);
 
         echo '<div class="response">';
         echo '<p>Thank you, ' . $name . ', for submitting your response!</p>';
@@ -73,12 +76,7 @@
         echo '</div>';
     }
     ?>
+<a href="statistics.php">View Statistics</a>
 
-    <script>
-        // Redirect to the previous page after 5 seconds
-        setTimeout(function() {
-            window.history.go(-1);
-        }, 5000);
-    </script>
 </body>
 </html>
