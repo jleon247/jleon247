@@ -38,6 +38,8 @@
         $q3 = $_POST['q3'];
         $q4 = $_POST['q4'];
         $q5 = $_POST['q5'];
+        $male = $_POST['male'];
+        $female = $_POST['female'];
 
         $score = 0;
 
