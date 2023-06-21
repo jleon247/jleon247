@@ -38,8 +38,7 @@
         $q3 = $_POST['q3'];
         $q4 = $_POST['q4'];
         $q5 = $_POST['q5'];
-        $male = $_POST['male'];
-        $female = $_POST['female'];
+        $gender = $_POST['gender'];
 
         $score = 0;
 
@@ -71,6 +70,13 @@
         echo '<p>Email: ' . $email . '</p>';
         echo '<p>Grade Level: ' . $grade . '</p>';
         echo '<p>Your Score: ' . $score . ' / 100</p>';
+         if ($gender == "male") {
+            echo "<p>You selected Male.</p>";
+        } elseif ($gender == "female") {
+            echo "<p>You selected Female.</p>";
+        } else {
+            echo "<p>Please select a gender.</p>";
+        }
         echo '</div>';
     } else {
         echo '<div class="response">';
