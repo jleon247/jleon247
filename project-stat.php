@@ -4,10 +4,12 @@
     <title>GGC Soccer Club - Statistics</title>
     <style>
         body {
+            background-image: url('/Images/goal.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
             font-family: Arial, sans-serif;
-            margin: 20px;
         }
-
         h1 {
             font-size: 24px;
             font-weight: bold;
@@ -46,12 +48,15 @@
 <h1>GGC Soccer Club - Statistics</h1>
 
 <?php
-// Read all responses from the text file
-$responses = file_get_contents('responses.txt');
+// Function to read all responses from the shared data file
+function getAllResponsesFromFile()
+{
+    return file_get_contents('responses.txt');
+}
 
-if (!empty($responses)) {
+if (!empty(getAllResponsesFromFile())) {
     // Split responses by new line
-    $responsesArray = explode("\n\n", $responses);
+    $responsesArray = explode("\n\n", getAllResponsesFromFile());
 
     // Calculate average score of all users
     $totalUsers = count($responsesArray);
@@ -159,11 +164,38 @@ if (!empty($responses)) {
     echo '</table>';
 
     echo '<h2>All Submitted Information</h2>';
-    echo "<pre>$responses</pre>";
+    echo '<table>';
+    echo '<tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Grade Level</th>
+            <th>Score</th>
+          </tr>';
+
+    foreach ($responsesArray as $response) {
+        $responseArray = explode("\n", $response);
+        $nameLine = reset($responseArray);
+        $emailLine = next($responseArray);
+        $gradeLine = next($responseArray);
+        $scoreLine = end($responseArray);
+
+        $name = substr($nameLine, strpos($nameLine, ':') + 2);
+        $email = substr($emailLine, strpos($emailLine, ':') + 2);
+        $grade = substr($gradeLine, strpos($gradeLine, ':') + 2);
+        $score = substr($scoreLine, strrpos($scoreLine, 'Score: ') + 7);
+
+        echo "<tr>";
+        echo "<td>$name</td>";
+        echo "<td>$email</td>";
+        echo "<td>$grade</td>";
+        echo "<td>$score</td>";
+        echo "</tr>";
+    }
+
+    echo '</table>';
 } else {
     echo '<p>No response submitted.</p>';
 }
 ?>
 </body>
 </html>
-
