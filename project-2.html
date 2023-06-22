@@ -2,156 +2,189 @@
 <html>
 <head>
     <title>GGC Soccer Club</title>
-     <style>
+    <style>
         body {
-            background-color: #15a9ed;
+            background-image: url('/Images/ball.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
             color: white;
             font-family: Arial, sans-serif;
         }
 
-        h1 {
-            color: #07f269;
-            font-weight: bold;
-        }
+    h1 {
+        color: #07f269;
+        font-weight: bold;
+    }
 
-        .required {
-            color: red;
-        }
+    .required {
+        color: red;
+    }
 
-        form {
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
+    table {
+        margin: 0 auto;
+        background-color: black;
+        padding: 20px;
+    }
 
-        fieldset {
-            border: none;
-        }
+    table.sections {
+        margin-bottom: 30px;
+    }
 
-        legend {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    table.questions {
+        margin-bottom: 20px;
+    }
 
-        .question {
-            margin-bottom: 20px;
-        }
+    table.questions p {
+        font-size: 14px;
+    }
 
-        .question p {
-            margin-bottom: 10px;
-        }
+    .options label {
+        display: block;
+        margin-bottom: 5px;
+    }
 
-        .options label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    .submit-reset {
+        text-align: center;
+    }
 
-        .submit-reset {
-            text-align: center;
-        }
-
-        .submit-reset input {
-            margin-right: 10px;
-        }
-    </style>
+    .submit-reset input {
+        margin-right: 10px;
+    }
+</style>
 </head>
 <body>
     <h1>GGC Soccer Club</h1>
- <form method = "post" action = "Project-2.php"> 
-    <form>
-        <section>
-            <label for="name">Name<span class="required">*</span>:</label>
-            <input type="text" id="name" name="name" required>
-        </section>
+    <table class="sections">
+        <tr>
+            <td>
+                <form method="post" action="project-1.php">
+                    <section>
+                        <label for="name">Name<span class="required">*</span>:</label>
+                        <input type="text" id="name" name="name" required>
+                    </section>
 
-        <section>
-            <label for="email">Email<span class="required">*</span>:</label>
-            <input type="email" id="email" name="email" required>
-        </section>
+                <section>
+                    <label for="email">Email<span class="required">*</span>:</label>
+                    <input type="email" id="email" name="email" required>
+                </section>
 
-        <section>
-            <label for="password">Password<span class="required">*</span>:</label>
-            <input type="password" id="password" name="password" required>
-        </section>
+                <section>
+                    <label for="password">Password<span class="required">*</span>:</label>
+                    <input type="password" id="password" name="password" required>
+                </section>
 
-        <section>
-            <label for="grade">Grade Level<span class="required">*</span>:</label>
-            <select id="grade" name="grade" required>
-                <option value="Freshman">Freshman</option>
-                <option value="Sophomore">Sophomore</option>
-                <option value="Junior">Junior</option>
-                <option value="Senior">Senior</option>
-            </select>
-        </section>
+                <section>
+                    <label for="grade">Grade Level<span class="required">*</span>:</label>
+                    <select id="grade" name="grade" required>
+                        <option value="Freshman">Freshman</option>
+                        <option value="Sophomore">Sophomore</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </section>
 
-        <section>
-            <label for="gender">Gender<span class="required">*</span>:</label>
-            
-            <input type="radio" name="gender" value="male" id="male">
-            <label for="male">Male</label>
+                <section>
+                    <label for="gender">Gender<span class="required">*</span>:</label>
+                    <input type="radio" name="gender" value="male" id="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" value="female" id="female">
+                    <label for="female">Female</label>
+                </section>
+                <br><br>
+                <table class="questions">
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend>Soccer Quiz (20 Points)</legend>
 
-            <input type="radio" name="gender" value="female" id="female">
-            <label for="female">Female</label>
-        </section>
-<br><br>
-        <fieldset>
-            <legend>Soccer Quiz (100 Points Total)</legend>
+                                <div class="question">
+                                    <p>Question 1: Who won the FIFA World Cup in 2018?</p>
+                                    <div class="options">
+                                        <label><input type="radio" name="q1" value="a"> a) France</label>
+                                        <label><input type="radio" name="q1" value="b"> b) Brazil</label>
+                                        <label><input type="radio" name="q1" value="c"> c) Germany</label>
+                                        <label><input type="radio" name="q1" value="d"> d) Spain</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend>Soccer Quiz (20 Points)</legend>
 
-            <div class="question">
-                <p>Question 1: Who won the FIFA World Cup in 2018?</p>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="a"> a) France</label>
-                    <label><input type="radio" name="q1" value="b"> b) Brazil</label>
-                    <label><input type="radio" name="q1" value="c"> c) Germany</label>
-                    <label><input type="radio" name="q1" value="d"> d) Spain</label>
+                                <div class="question">
+                                    <p>Question 2: Which player has won the most Ballon d'Or awards?</p>
+                                    <div class="options">
+                                        <label><input type="radio" name="q2" value="a"> a) Lionel Messi</label>
+                                        <label><input type="radio" name="q2" value="b"> b) Cristiano Ronaldo</label>
+                                        <label><input type="radio" name="q2" value="c"> c) Michel Platini</label>
+                                        <label><input type="radio" name="q2" value="d"> d) Johan Cruyff</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend>Soccer Quiz (20 Points)</legend>
+
+                                <div class="question">
+                                    <p>Question 3: Which country has won the most FIFA World Cup titles?</p>
+                                    <div class="options">
+                                        <label><input type="radio" name="q3" value="a"> a) Brazil</label>
+                                        <label><input type="radio" name="q3" value="b"> b) Germany</label>
+                                        <label><input type="radio" name="q3" value="c"> c) Italy</label>
+                                        <label><input type="radio" name="q3" value="d"> d) Argentina</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend>Soccer Quiz (20 Points)</legend>
+
+                                <div class="question">
+                                    <p>Question 4: Which player has scored the most goals in international men's football?</p>
+                                    <div class="options">
+                                        <label><input type="radio" name="q4" value="a"> a) Cristiano Ronaldo</label>
+                                        <label><input type="radio" name="q4" value="b"> b) Lionel Messi</label>
+                                        <label><input type="radio" name="q4" value="c"> c) Pele</label>
+                                        <label><input type="radio" name="q4" value="d"> d) Miroslav Klose</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend>Soccer Quiz (20 Points)</legend>
+
+                                <div class="question">
+                                    <p>Question 5: Which team has won the most UEFA Champions League titles?</p>
+                                    <div class="options">
+                                        <label><input type="radio" name="q5" value="a"> a) Real Madrid</label>
+                                        <label><input type="radio" name="q5" value="b"> b) Barcelona</label>
+                                        <label><input type="radio" name="q5" value="c"> c) Bayern Munich</label>
+                                        <label><input type="radio" name="q5" value="d"> d) AC Milan</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
+                <div class="submit-reset">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
                 </div>
-            </div>
-
-            <div class="question">
-                <p>Question 2: Which player has won the most Ballon d'Or awards?</p>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="a"> a) Lionel Messi</label>
-                    <label><input type="radio" name="q2" value="b"> b) Cristiano Ronaldo</label>
-                    <label><input type="radio" name="q2" value="c"> c) Michel Platini</label>
-                    <label><input type="radio" name="q2" value="d"> d) Johan Cruyff</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>Question 3: Which country has won the most FIFA World Cup titles?</p>
-                <div class="options">
-                    <label><input type="radio" name="q3" value="a"> a) Brazil</label>
-                    <label><input type="radio" name="q3" value="b"> b) Germany</label>
-                    <label><input type="radio" name="q3" value="c"> c) Italy</label>
-                    <label><input type="radio" name="q3" value="d"> d) Argentina</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>Question 4: Which player has scored the most goals in international men's football?</p>
-                <div class="options">
-                    <label><input type="radio" name="q4" value="a"> a) Cristiano Ronaldo</label>
-                    <label><input type="radio" name="q4" value="b"> b) Lionel Messi</label>
-                    <label><input type="radio" name="q4" value="c"> c) Pele</label>
-                    <label><input type="radio" name="q4" value="d"> d) Miroslav Klose</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>Question 5: Which team has won the most UEFA Champions League titles?</p>
-                <div class="options">
-                    <label><input type="radio" name="q5" value="a"> a) Real Madrid</label>
-                    <label><input type="radio" name="q5" value="b"> b) Barcelona</label>
-                    <label><input type="radio" name="q5" value="c"> c) Bayern Munich</label>
-                    <label><input type="radio" name="q5" value="d"> d) AC Milan</label>
-                </div>
-            </div>
-        </fieldset>
-
-        <div class="submit-reset">
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-        </div>
-    </form>
+            </form>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
