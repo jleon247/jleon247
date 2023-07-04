@@ -4,7 +4,7 @@
         <title>Project-3 Registration</title>
     </head>
     <body>
-        <h1>ITEC Student Registration</h1>
+        <h1>GGC Registration</h1>
         <p>Required field are marked with an asterisk (*)</p>
         <form method = "post" action = "" enctype = "multipart/form-data" >
             <fieldset>
