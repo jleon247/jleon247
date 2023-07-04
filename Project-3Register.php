@@ -40,11 +40,7 @@
                                 <option value = "Senior">Senior</option>
                             </select>
                         </td>
-                    </tr>
-                    <tr>
-                        <th>Photo </th>
-                        <td><input type = "file" name = "myPhoto" accept = ".jpg, .png, .gif"></td>
-                    </tr>   
+                    </tr> 
                 </table>
             </fieldset>
             <br>
@@ -72,9 +68,6 @@
                           name VARCHAR(20) NOT NULL,
                           email VARCHAR(20) NOT NULL,
                           level VARCHAR(10) NOT NULL,
-                          photo VARCHAR(128),
-                          fee FLOAT(2),
-                          bonus FLOAT(2),
                           PRIMARY KEY(id)
                         )";
                 exeSQL($conn, $sql);
@@ -87,13 +80,12 @@
             } else {
                 $file = uploadFile("myPhoto", "jpg:png:gif");
                 echo $_POST["password1"];
-                $sql = "INSERT INTO Students (userName, password, name, email, level, photo, fee, bonus)
+                $sql = "INSERT INTO Students (userName, password, name, email, level)
                        VALUES ('" . $_POST["userName"]. "', 
                                '" . sha1($_POST["password1"]). "',
                                '" . $_POST["myName"] . "',
                                '" . $_POST["email"] . "',
-                               '" . $_POST["level"] . "',
-                               '" . $file . "', 100, 0);";
+                               '" . $_POST["level"] . "';
                 exeSQL($conn, $sql);
                 echo "<br>Click <a href = 'Project-3Login.html'>here</a> to login.<br>";
             }
