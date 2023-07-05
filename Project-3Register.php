@@ -94,9 +94,9 @@
                                '" . sha1($_POST["password1"]). "',
                                '" . $_POST["myName"] . "',
                                '" . $_POST["email"] . "',
-                               '" . $_POST["level"] . "';
+                               '" . $_POST["level"] . "')";
                 exeSQL($conn, $sql);
-                echo "<br>Click <a href = 'Project-3Login.html'>here</a> to login.<br>";
+                echo "<br>Click <a href='Project-3Login.html'>here</a> to login.<br>";
             }
         }
     }
