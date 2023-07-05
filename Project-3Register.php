@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>Project-3 Registration</title>
+           <style>
+            body {
+            background-image: url('/Images/goal.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-family:  font-family: Arial, sans-serif;
+            }
+        </style>
     </head>
     <body>
         <h1>GGC Registration</h1>
